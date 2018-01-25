@@ -87,12 +87,14 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;IL_STD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Program Files\IBM\ILOG\CPLEX_Studio1271\concert\include;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\lib\x64_windows_vs2015\stat_mda\cplex1271.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\lib\x64_windows_vs2015\stat_mda\ilocplex.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\concert\lib\x64_windows_vs2015\stat_mda\concert.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -103,10 +105,12 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\include;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\concert\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\lib\x64_windows_vs2015\stat_mda\cplex1271.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\lib\x64_windows_vs2015\stat_mda\ilocplex.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\concert\lib\x64_windows_vs2015\stat_mda\concert.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -117,14 +121,16 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;IL_STD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Program Files\IBM\ILOG\CPLEX_Studio1271\concert\include;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\lib\x64_windows_vs2015\stat_mda\cplex1271.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\lib\x64_windows_vs2015\stat_mda\ilocplex.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\concert\lib\x64_windows_vs2015\stat_mda\concert.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -135,17 +141,29 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;IL_STD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\include;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\concert\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\lib\x64_windows_vs2015\stat_mda\cplex1271.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\lib\x64_windows_vs2015\stat_mda\ilocplex.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\concert\lib\x64_windows_vs2015\stat_mda\concert.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="city.h" />
+    <ClCompile Include="class_edge_hash.h" />
+    <ClCompile Include="get_data.cpp" />
+    <ClCompile Include="graph.cpp" />
+    <ClCompile Include="plan_node.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="customize_hash.h" />
+    <ClInclude Include="edge.h" />
+    <ClInclude Include="request.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -14,4 +14,32 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="get_data.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="graph.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="plan_node.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="class_edge_hash.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="city.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="request.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="customize_hash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="edge.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
