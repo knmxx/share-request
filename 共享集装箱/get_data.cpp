@@ -13,9 +13,10 @@
 #include"class_edge_hash.h"
 using namespace std;
 
-
-vector<request*> get_request() {
-	fstream rq("request.txt");
+const  static int  start_index = 1;
+//当日需求
+vector<request*> get_request_one_day() {
+	fstream rq("request_one_day.txt");
 	vector<request*>all_requset;
 	stringstream one_line_stream;
 	string one_line;
@@ -32,21 +33,47 @@ vector<request*> get_request() {
 		//需求结束时间
 		auto e_f = end_time.find(':');
 		end_time.replace(e_f,1,".");
-
-		
 		one.end_time = stod(end_time);
-		
 		request *p_request =new request(one);
-
 		all_requset.push_back(std::move(p_request));//requset中未实现移动构造函数
 	}
 	for (int i = all_requset.size()-1; i >=0 ; i--) {
-		all_requset.at(i)->id -= all_requset.at(0)->id;
+		all_requset.at(i)->group_id = all_requset.at(i)->id;
+		all_requset.at(i)->id -= start_index;
+		
 	}
 	return all_requset;
 }
-
-
+//隔夜需求
+vector<request*> get_request_two_day() {
+	fstream rq("request_two_day.txt");
+	vector<request*>all_requset;
+	stringstream one_line_stream;
+	string one_line;
+	while (getline(rq, one_line)) {
+		stringstream  one_line_stream(one_line);
+		request one;
+		string end_time;
+		string start_time;
+		one_line_stream >> one.id >> one.start_point >> one.end_point >> start_time >> end_time;
+		//需求开始时间
+		auto s_f = start_time.find(':');
+		start_time.replace(s_f, 1, ".");
+		one.start_time = stod(start_time);
+		//需求结束时间
+		auto e_f = end_time.find(':');
+		end_time.replace(e_f, 1, ".");
+		end_time = end_time.substr(4);
+		one.end_time = stod(end_time);
+		request *p_request = new request(one);
+		all_requset.push_back(std::move(p_request));//requset中未实现移动构造函数
+	}
+	for (int i = all_requset.size() - 1; i >= 0; i--) {
+		all_requset.at(i)->group_id = all_requset.at(i)->id;
+		all_requset.at(i)->id -= start_index;
+	}
+	return all_requset;
+}
 unordered_set<edge,edge_hash, edge_equal> get_edge() {
 	set<string>total_city;//城市的个数
 	fstream eg("map.txt");
@@ -72,5 +99,5 @@ unordered_set<edge,edge_hash, edge_equal> get_edge() {
 	
 }
 //int main() {
-//	get_request();
+//	get_request_two_day();
 //}

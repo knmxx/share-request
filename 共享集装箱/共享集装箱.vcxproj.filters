@@ -30,6 +30,9 @@
     <ClCompile Include="city.h">
       <Filter>头文件</Filter>
     </ClCompile>
+    <ClCompile Include="split_two_request.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="request.h">

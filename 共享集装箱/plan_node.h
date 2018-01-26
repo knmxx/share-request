@@ -10,15 +10,10 @@ class plan_node {
 public:
 
 	int request_size;//已经服务的需求的个数
-
 	std::vector<city>real_path;//真实路径
 	std::vector<bool> mark_visited;//标记需求是否服务过
-
 	int total_request;
-
-	double cost = 0;
-
-
+	double cost = 0;//方案的花费
 	plan_node(int total_request) :total_request(total_request) {
 		request_size = 1;
 		mark_visited.resize(total_request, false);

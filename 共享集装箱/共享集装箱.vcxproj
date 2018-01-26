@@ -103,14 +103,14 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\include;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\concert\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;IL_STD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\lib\x64_windows_vs2015\stat_mda\cplex1271.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\cplex\lib\x64_windows_vs2015\stat_mda\ilocplex.lib;C:\Program Files\IBM\ILOG\CPLEX_Studio1271\concert\lib\x64_windows_vs2015\stat_mda\concert.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -159,6 +159,7 @@
     <ClCompile Include="get_data.cpp" />
     <ClCompile Include="graph.cpp" />
     <ClCompile Include="plan_node.h" />
+    <ClCompile Include="split_two_request.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="customize_hash.h" />
